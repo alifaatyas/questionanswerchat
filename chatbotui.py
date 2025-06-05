@@ -278,8 +278,8 @@ openai.api_key = st.secrets["OPENAI_API_KEY"] #secret key OpenAI Anda di sini
 def load_faiss_and_metadata():
     # Ensure file paths are correct for your environment
     try:
-        index = faiss.read_index(r'C:\Users\Lenovo\OneDrive\Documents\CAPSTONE\baru\pasal_index.faiss')
-        metadata = pd.read_json(r'C:\Users\Lenovo\OneDrive\Documents\CAPSTONE\baru\pasal_metadata.json')
+        index = faiss.read_index("pasal_index.faiss")
+        metadata = pd.read_json("pasal_metadata.json")
         return index, metadata
     except FileNotFoundError as e:
         st.error(f"Error loading FAISS/metadata file: {e}. Please check the file paths.")
